@@ -1,7 +1,7 @@
 import React, { useState, Fragment, useEffect } from "react";
 import { nanoid } from "nanoid";
 import PageBanner from "../../../PageBanner";
-import data from "../../../../../JSON/org_com.json";
+import data from "../../../../../JSON/gallaryImages.json";
 //import ReadOnlyRow from "./components/ReadOnlyRow";
 //import EditableRow from "./components/EditableRow";
 
@@ -18,8 +18,8 @@ const EditableRow = ({
                     type="text"
                     required="required"
                     placeholder="Enter Name"
-                    name="role"
-                    value={editFormData.role}
+                    name="id"
+                    value={editFormData.id}
                     onChange={handleEditFormChange}
                 ></input>
             </td>
@@ -40,8 +40,8 @@ const EditableRow = ({
                     type="text"
                     required="required"
                     placeholder="Enter Name"
-                    name="designation"
-                    value={editFormData.designation}
+                    name="url"
+                    value={editFormData.url}
                     onChange={handleEditFormChange}
                 ></input>
             </td>
@@ -62,9 +62,9 @@ const EditableRow = ({
 const ReadOnlyRow = ({ contact, handleEditClick, handleDeleteClick, convertedJSON }) => {
     return (
         <tr>
-            <td>{contact.role}</td>
+            <td>{contact.id}</td>
             <td>{contact.name}</td>
-            <td>{contact.designation}</td>
+            <td>{contact.url}</td>
             <td>
                 <button
                     class="btn btn-primary"
@@ -87,7 +87,7 @@ const ReadOnlyRow = ({ contact, handleEditClick, handleDeleteClick, convertedJSO
 };
 
 
-const EOrgCom = () => {
+const EGallery = () => {
     const [option, setOption] = useState(0);
     const [allData, setAllData] = useState('');
     const [isLoading, setIsLoading] = useState(true);
@@ -101,16 +101,16 @@ const EOrgCom = () => {
 
     const [addFormData, setAddFormData] = useState({
         name: "",
-        role:"",
-        designation:""
+        id:"",
+        url:""
 
 
     });
 
     const [editFormData, setEditFormData] = useState({
         name: "",
-        role:"",
-        designation:""
+        id:"",
+        url:""
 
     });
 
@@ -145,9 +145,10 @@ const EOrgCom = () => {
 
         const newContact = {
             id: nanoid(),
+            id:addFormData.id,
             name: addFormData.name,
-            role:addFormData.role,
-            designation:addFormData.designation
+           
+            url:addFormData.url
 
 
         };
@@ -161,9 +162,9 @@ const EOrgCom = () => {
 
         const editedContact = {
             id: editContactId,
+            id:editFormData.id,
             name: editFormData.name,
-            role:editFormData.role,
-            designation:editFormData.designation
+            url:editFormData.url
 
 
         };
@@ -183,9 +184,9 @@ const EOrgCom = () => {
         setEditContactId(contact.id);
 
         const formValues = {
+            id: contact.id,
             name: contact.name,
-            role: contact.role,
-            designation:contact.designation
+            url:contact.url
 
 
         };
@@ -214,7 +215,7 @@ const EOrgCom = () => {
 
     return (
         <div>
-         
+           
 
             <div className="contenti">
                 <div className="container">
@@ -223,7 +224,7 @@ const EOrgCom = () => {
                         <div className="col-md-9">
                             <div>
                                 {/*
-                                <h2>Select Role</h2>
+                                <h2>Select id</h2>
                                  <button onClick={() =>
                                     setContacts(data.organsingList[option].persons)}>Symposium Patron</button>
                                 <button onClick={() =>
@@ -235,15 +236,15 @@ const EOrgCom = () => {
 
                             </div>
 
-                            <h2 className="classic-title"><span>Edit Organising Committee </span></h2>
+                            <h2 className="classic-title"><span>Edit Gallery Images</span></h2>
                             <div className="EOrgCom-container">
                                 <form onSubmit={handleEditFormSubmit}>
                                     <table className="table table-responsive table-condensed table-bordered">
                                         <thead>
                                             <tr>
-                                                <th>Role</th>
+                                                <th>Sr.no.</th>
                                                 <th>Name</th>
-                                                <th>Designation</th>
+                                                <th>Url</th>
                                                 <th>Actions</th>
                                             </tr>
                                         </thead>
@@ -278,9 +279,9 @@ const EOrgCom = () => {
                                             className="email"
                                             style={{ maxWidth: '60%' }}
                                             type="text"
-                                            name="role"
+                                            name="id"
                                             required="required"
-                                            placeholder="Enter a role"
+                                            placeholder="Enter a id"
                                             onChange={handleAddFormChange}
                                         />
                                           <input
@@ -296,9 +297,9 @@ const EOrgCom = () => {
                                             className="email"
                                             style={{ maxWidth: '60%' }}
                                             type="text"
-                                            name="designation"
+                                            name="url"
                                             required="required"
-                                            placeholder="Enter a designation"
+                                            placeholder="Enter a url"
                                             onChange={handleAddFormChange}
                                         />
                                       <div className=" " style={{ textAlign: 'center', maxWidth: '60%' }}>
@@ -321,4 +322,4 @@ const EOrgCom = () => {
     );
 };
 
-export default EOrgCom;
+export default EGallery;

@@ -2,26 +2,32 @@
     "sliderImg"  : [
         {
             "id": "1",
+            "name":"wcersc",
             "url": "images/slider/2.jpg"
         },
         {
             "id": "2",
+            "name":"wcersc",
             "url": "images/slider/3.jpg"
         },
         {
             "id": "3",
+            "name":"wcersc",
             "url": "images/slider/4.jpg"
         },
         {
             "id": "4",
+            "name":"wcersc",
             "url": "images/slider/5.jpg"
         },
         {
             "id": "5",
+            "name":"wcersc",
             "url": "images/slider/6.jpg"
         },
         {
             "id": "6",
+            "name":"wcersc",
             "url": "images/slider/7.jpg"
         }
     ],
@@ -39,6 +45,7 @@
 
     "support":[
         {
+            "id": "1",
             "name":"WCE ACM",
             "url":"images/wceacm.png"
         }

@@ -14,7 +14,10 @@ import ENotification from './Home/ENotification';
 import EOrgCom from './Committe/EOrgCom';
 import EHeader from './Home/EHeader';
 import EContact from './Home/EContact';
-
+import ESlider from './Images/ESlider';
+import ESupport from './Images/ESupport';
+import EImages from './Images/EImages';
+import EGallery from './Images/EGallery';
 export default function AdminPanel({ isLoggedIn, handleLogout }) {
 
 
@@ -113,6 +116,25 @@ export default function AdminPanel({ isLoggedIn, handleLogout }) {
 
                                 </ul>
                             </div>
+                            <div className="widget widget-categories">
+                                <h4 className='accent-color'>Images<span className="head-line"></span></h4>
+                                <ul>
+                                    <li>
+                                        <a onClick={() => setActiveComponent("slider")}>Slider Images</a>
+                                    </li>
+                                    <li>
+                                        <a onClick={() => setActiveComponent("support")}>Supported by Images</a>
+                                    </li>
+                                    <li>
+                                        <a onClick={() => setActiveComponent("gallery")}>Gallery Images</a>
+                                    </li>
+                                    <li>
+                                        <a onClick={() => setActiveComponent("images")}>Other Images</a>
+                                    </li>
+                                   
+
+                                </ul>
+                            </div>
                         </div>
 
 
@@ -130,6 +152,14 @@ export default function AdminPanel({ isLoggedIn, handleLogout }) {
                             <EHeader name="header"/>
                             <EContact name="contact"/>
                              {/* Home Ends */}
+
+                              {/* Images Starts */}
+                                <ESlider name="slider"/>
+                                <ESupport name="support"/>
+                                <EImages name="images"/>
+                                <EGallery name="gallery"/>
+                         
+                             {/* Images Ends */}
 
                                 {/* Authors start */}
 
