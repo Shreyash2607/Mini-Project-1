@@ -14,7 +14,8 @@ const dates = require('../models/date');
 const registration = require('../models/registration');
 const image = require('../models/image');
 const posterPresentation = require('../models/posterPresentation');
-
+const notification = require('../models/notifications');
+const homeBody = require('../models/homeBody');
 
 const storage = multer.diskStorage({
     destination:function(req,file,cb){
@@ -150,6 +151,30 @@ router.post('/posterPresentation',verifyJWT,async(req,res) => {
     try{
         console.log(req.body);
         const data = new posterPresentation(req.body);
+        await data.save();
+        res.status(200).json({success:true, data });
+    }
+    catch(err){
+        console.log(err);
+    }
+})
+
+router.post('/notification',async(req,res) => {
+    try{
+        console.log(req.body);
+        const data = new notification(req.body);
+        await data.save();
+        res.status(200).json({success:true, data });
+    }
+    catch(err){
+        console.log(err);
+    }
+})
+
+router.post('/homeBody',async(req,res) => {
+    try{
+        console.log(req.body);
+        const data = new homeBody(req.body);
         await data.save();
         res.status(200).json({success:true, data });
     }

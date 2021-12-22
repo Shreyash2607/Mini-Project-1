@@ -11,6 +11,8 @@ const dates = require('../models/date');
 const registration = require('../models/registration');
 const image = require('../models/image');
 const posterPresentation = require('../models/posterPresentation');
+const notification = require('../models/notifications');
+const homeBody = require('../models/homeBody');
 
 router.get('/Paragraphs/:name',async (req,res) => {
     const para = await paragraph.findOne({id:1});
@@ -60,6 +62,16 @@ router.get('/images/:imagetype',async(req,res) => {
 
 router.get('/posterPresentation',async (req,res) => {
     const data = await posterPresentation.find({});
+    res.send(data);
+})
+
+router.get('/notification',async (req,res) => {
+    const data = await notification.find({});
+    res.send(data);
+})
+
+router.get('/homeBody',async (req,res) => {
+    const data = await homeBody.find({});
     res.send(data);
 })
 

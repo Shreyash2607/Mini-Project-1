@@ -1,12 +1,13 @@
 {
-    "data":[
+    "data":{
+        "Links":[
         {
             "id":1,
             "text":"Groupwise allocation of teams for Poster Presentation: Group 1",
             "link":"/asset/2021_grp1.pdf",
             "new":"true"
         },
-        {
+        { 
             "id":2,
             "text":"Groupwise allocation of teams for Poster Presentation: Group 2",
             "link":"/asset/2021_grp2.pdf",
@@ -149,4 +150,5 @@
 
         
     ]
+    }
 }
