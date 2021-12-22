@@ -12,7 +12,7 @@ function Notifications() {
                  <h3 className="classic-title" id="notifications"><span>Notifications</span></h3>
 
                  <ul>
-                <strong>
+                {/* { <strong>
                     {
                      info.data? (
                         info.data.map((link)=>
@@ -20,7 +20,7 @@ function Notifications() {
                         )
                       ) : null
                     }
-                </strong>
+                </strong> } */}
                 </ul>
                    
 
