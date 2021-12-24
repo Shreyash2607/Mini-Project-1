@@ -13,6 +13,7 @@ const image = require('../models/image');
 const posterPresentation = require('../models/posterPresentation');
 const notification = require('../models/notifications');
 const homeBody = require('../models/homeBody');
+const header = require('../models/header');
 
 router.get('/Paragraphs/:name',async (req,res) => {
     const para = await paragraph.findOne({id:1});
@@ -72,6 +73,11 @@ router.get('/notification',async (req,res) => {
 
 router.get('/homeBody',async (req,res) => {
     const data = await homeBody.find({});
+    res.send(data);
+})
+
+router.get('/header',async (req,res) => {
+    const data = await header.find({});
     res.send(data);
 })
 
