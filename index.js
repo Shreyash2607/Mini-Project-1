@@ -16,7 +16,7 @@ const app = express();
 
 app.use(
     cors({
-        origin:"https://rsc.wce.ac.in"
+        origin:"https://www.rsc.wce.ac.in"
     })
 );
 
